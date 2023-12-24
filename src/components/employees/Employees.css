@@ -1,5 +1,6 @@
 
-.customers {
+
+.employees {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -7,7 +8,7 @@
     margin: 3rem;
   }
 
-  .customers > * {
+  .employees > * {
     flex-basis: 31%;
     margin: 0.5rem;
   }
