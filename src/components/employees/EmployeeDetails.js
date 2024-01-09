@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getEmployeeByUserId } from "../../services/employeeService";
-import "./Employees.css"
-
+import "./Employees.css";
 
 export const EmployeeDetails = () => {
   const [employee, setEmployee] = useState({});
@@ -27,12 +26,10 @@ export const EmployeeDetails = () => {
         {employee.specialty}
       </div>
       <div>
-        <span className="employee-info"> Rate: </span>
-        ${employee.rate}
+        <span className="employee-info"> Rate: </span>${employee.rate}
       </div>
 
-      <div>Currently working on {employee.employeeTickets?. employeeId} tickets</div>
-      
+      <div>Currently working on {employee.employeeTickets?.length} tickets</div>
     </section>
   );
 };
