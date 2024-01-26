@@ -15,6 +15,12 @@ export const getUserByEmail = (email) => {
   )
 }
 
+export const getUserById = (id) => {
+  return fetch(`http://localhost:8088/users?id=${id}`).then((res) =>
+    res.json()
+  )
+}
+
 export const createUser = (customer) => {
   return fetch("http://localhost:8088/users", {
     method: "POST",
@@ -24,3 +30,14 @@ export const createUser = (customer) => {
     body: JSON.stringify(customer),
   }).then((res) => res.json())
 }
+
+export const updateProfile = (user) => {
+  return fetch(`http://localhost:8088/users/${user.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(user),
+  }).then((res) => res.json())
+}
+
